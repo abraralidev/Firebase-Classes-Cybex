@@ -1,4 +1,6 @@
+import 'package:class_1/screens/auth/login.dart';
 import 'package:class_1/screens/auth/signIn.dart';
+import 'package:class_1/screens/dashboard.dart';
 import 'package:class_1/screens/home/home.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +26,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const LoginScreen(),
+      home: const Dasboard(),
     );
   }
 }
