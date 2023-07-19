@@ -9,6 +9,12 @@ void main() async
     options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(const MyApp());
+
+ 
+ var x = 25;
+   x <<= 0;
+   print("x <<= 2 -> ${x}");
+
 }
 
 class MyApp extends StatelessWidget {

@@ -28,13 +28,22 @@ class _Crud_ScreenState extends State<Crud_Screen> {
                   child: CircularProgressIndicator(),
                 )
               : ListView.builder(
-                itemCount: snapshot.data!.docs.length,
-                itemBuilder: (context, index) {
-                  return ListTile(
-                    title: Text(snapshot.data!.docs[index]['name']),
-                    subtitle: Text(snapshot.data!.docs[index]['country']),
-                  );
-                });
+                  itemCount: snapshot.data!.docs.length,
+                  itemBuilder: (context, index) {
+                    return ListTile(
+                      onLongPress: () {
+                        print("object");
+                      },
+                      leading: CircleAvatar(
+                        child: Center(child: Text(index.toString())),
+                      ),
+                      title: Text(snapshot.data!.docs[index]['name']),
+                      subtitle: Text(snapshot.data!.docs[index]['country']),
+                     trailing: IconButton(onPressed: (){
+                      todo.doc(snapshot.data!.docs[index].id).delete();
+                     }, icon: Icon(Icons.delete)),
+                    );
+                  });
         },
       ),
     );
