@@ -2,19 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'crud.dart';
-void main() async
- {
-    WidgetsFlutterBinding.ensureInitialized();
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(const MyApp());
-
- 
- var x = 25;
-   x <<= 0;
-   print("x <<= 2 -> ${x}");
-
 }
 
 class MyApp extends StatelessWidget {
@@ -24,15 +18,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter',
       theme: ThemeData(
-       
         primarySwatch: Colors.blue,
-      
       ),
-      
-      home: Crud_Screen()
-      ,
+      home: const Crud_Screen(),
     );
   }
 }
